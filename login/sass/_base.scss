@@ -1,0 +1,15 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "susy";
+
+// ---------------------------------------------------------------------------
+// Elastic grid as percentages
+$total-columns: 12;
+$column-width: 6%;
+$gutter-width: 2%;
+$grid-padding: 0.5em;
+
+$container-style: magic;
+$container-width: 50em;
+

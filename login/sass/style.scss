@@ -1,0 +1,69 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "base";
+@import "compass/css3";
+
+/* -------------------------------------------------------------------------*/
+/* Layout */
+
+.container {
+  @include container;
+
+}
+
+$break-small: 320px;
+$break-large: 1200px;
+
+$primary-color: #34495e;
+$primary-font: 21px'Open Sans', sans-serif;
+$secondary-font: 14px 'Open Sans', sans-serif;
+$padding: 17px;
+
+body {background-color: $primary-color;}
+
+h1 {font: $primary-font; text-transform: uppercase; color:#FFF; font-weight: 400; letter-spacing:1px;}
+h2 {font: $secondary-font; text-transform: uppercase; color:#FFF; font-weight: 300; letter-spacing:1.2px;}
+
+#header {text-align:center; margin: 40px 0; img {padding-bottom: 10px;} }
+
+#login {/*margin-left:space(4,12);*/ width:315px; border-bottom: 3px #2ECC71 solid; margin: 0 auto; margin-bottom: 40px;
+
+		@media screen and (max-width: $break-small) {
+			margin-left:0; width: 100%;
+ 		}
+
+		.loginbox {background-color:#FFF; margin-top: 15%; height: 350px;}
+
+		.top {background-color: #3498db; padding: $padding;}
+
+		#content form { margin: 10% 5%;}
+		#content form input[type="text"],
+		#content form input[type="password"] {
+			@include transition-duration(0.2s);
+			background: #F4F4F4 url(../img/login.png) no-repeat;
+			border: 1px solid #c8c8c8;
+			color: #777;
+			font: $secondary-font;
+			margin: 0 0 10px;
+			padding: 15px 10px 15px 40px;
+			width: 80%;
+		}
+		#content form input[type="text"]:focus,
+		#content form input[type="password"]:focus {
+			@include box-shadow(#2ECC71 0px 0px 2px);
+			background-color: #fff;
+			border: 2px solid #2ECC71;
+			outline: none;
+		}
+		#username { background-position: 10px 15px !important }
+		#password { background-position: 10px -48px !important }
+
+		#content form input[type="submit"] {font: $secondary-font; background-color:#2ECC71; border:0; width:180px; padding: 13px 20px; color:#fff; text-transform: uppercase; margin: 35px 47px; -webkit-appearance: none;}
+		#content form input[type="submit"]:hover {border-bottom: 3px solid #28AD5E;}
+
+		#content form input[type=checkbox] {}
+		label[for=remember-check] {font: $secondary-font; color:#777;}
+
+		}
+
