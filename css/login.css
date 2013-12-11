@@ -1,0 +1,221 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* line 17, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+/* line 22, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1; }
+
+/* line 24, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none; }
+
+/* line 26, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* line 28, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+/* line 30, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none; }
+  /* line 103, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+  q:before, q:after, blockquote:before, blockquote:after {
+    content: "";
+    content: none; }
+
+/* line 32, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none; }
+
+/* line 116, ../../../../../Applications/CodeKit.app/Contents/Resources/engines/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; }
+
+ 
+
+/* line 64, ../sass/partials/_grid.scss */
+* html .clearfix, *:first-child + html .clearfix {
+  zoom: 1; }
+
+
+
+
+
+/* line 37, ../sass/screen.scss */
+html {
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); }
+
+
+
+/*%line:before {
+	content: "";
+	display: block;
+	border-top: solid 2px #8CC63F;
+	width: 50px;
+	height: 1px;
+	position: absolute;
+	top: 70%;
+	z-index: 1;
+}*/
+
+/* line 64, ../sass/screen.scss */
+#home {
+  background: url(../img/main-bg.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; }
+
+/* line 80, ../sass/screen.scss */
+ul.lst li {
+  padding: 0.28em 0;
+  color: #666666; }
+  /* line 84, ../sass/screen.scss */
+  ul.lst li em {
+    display: block;
+    float: right;
+    color: #033552;
+    width: 25%;
+    margin: 0 30% 0 0; }
+
+/* line 105, ../sass/screen.scss */
+h1 {
+  font: 21px "Open Sans", sans-serif;
+  text-transform: uppercase;
+  color: #FFF;
+  font-weight: 400;
+  letter-spacing: 1px; }
+
+/* line 106, ../sass/screen.scss */
+h2 {
+  font: 14px "Open Sans", sans-serif;
+  text-transform: uppercase;
+  color: #FFF;
+  font-weight: 300;
+  letter-spacing: 1.2px; }
+
+/* line 108, ../sass/screen.scss */
+#header {
+  text-align: center;
+  overflow: hidden;
+  margin: 20px 0;
+  display: none; }
+  /* line 108, ../sass/screen.scss */
+  #header img {
+    padding-bottom: 10px; }
+
+/* line 111, ../sass/screen.scss */
+#login {
+  /*margin-left:space(4,12);*/
+  top: 20px;
+  display: none;
+  width: 315px;
+  border-bottom: 3px #2ECC71 solid;
+  margin: 0 auto;
+  margin-bottom: 40px; }
+  @media screen and (max-width: 320px) {
+    /* line 111, ../sass/screen.scss */
+    #login {
+      margin-left: 0;
+      width: 100%; } }
+  /* line 116, ../sass/screen.scss */
+  #login .loginbox {
+    background-color: #FFF;
+    margin-top: 15%;
+    height: 285px; }
+  /* line 118, ../sass/screen.scss */
+  #login .top {
+    background-color: #3498db;
+    padding: 17px;
+    overflow: hidden; }
+  /* line 120, ../sass/screen.scss */
+  #login #content form {
+    margin: 10% 5%; }
+  /* line 122, ../sass/screen.scss */
+  #login #content form input[type="text"],
+  #login #content form input[type="password"] {
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    background: #f4f4f4 url(../img/login.png) no-repeat;
+    border: 1px solid #c8c8c8;
+    color: #777;
+    font: 14px "Open Sans", sans-serif;
+    margin: 0 0 10px;
+    padding: 15px 10px 15px 40px;
+    width: 80%; }
+  /* line 133, ../sass/screen.scss */
+  #login #content form input[type="text"]:focus,
+  #login #content form input[type="password"]:focus {
+    -webkit-box-shadow: #2ecc71 0px 0px 2px;
+    -moz-box-shadow: #2ecc71 0px 0px 2px;
+    box-shadow: #2ecc71 0px 0px 2px;
+    background-color: #fff;
+    border: 2px solid #2ECC71;
+    outline: none; }
+  /* line 139, ../sass/screen.scss */
+  #login #username {
+    background-position: 10px 15px !important; }
+  /* line 140, ../sass/screen.scss */
+  #login #password {
+    background-position: 10px -48px !important; }
+  /* line 142, ../sass/screen.scss */
+  #login #content form input[type="submit"] {
+    font: 14px "Open Sans", sans-serif;
+    background-color: #2ECC71;
+    border: 0;
+    padding: 13px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+    width: 100%; }
+  /* line 143, ../sass/screen.scss */
+  #login #content form input[type="submit"]:hover {
+    border-bottom: 3px solid #28AD5E; }
+
+/* line 146, ../sass/screen.scss */
+#loader {
+  margin: 20px auto;
+  width: 32px;
+  height: 32px; }
+
+/* line 152, ../sass/screen.scss */
+#results p {
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  margin: 0 auto;
+  width: 90%;
+  padding: 5% 5%;
+  text-align: center; }

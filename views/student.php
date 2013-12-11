@@ -12,16 +12,16 @@
     <title>FAN System</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-reset.css" rel="stylesheet">
-    <link href="assets/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
-    <link href="assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-reset.css" rel="stylesheet">
+    <link href="../assets/advanced-datatable/media/css/demo_page.css" rel="stylesheet" />
+    <link href="../assets/advanced-datatable/media/css/demo_table.css" rel="stylesheet" />
     <!--external css-->
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+    <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <link href="../assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
     <!-- Custom styles for this template -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/style-responsive.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet" />
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
@@ -40,7 +40,7 @@
                 <div data-original-title="Toggle Navigation" data-placement="right" class="icon-reorder tooltips"></div>
             </div>
             <!--logo start-->
-            <a href="index.html#" class="logo">FAN<span>system</span></a>
+            <a href="student.php" class="logo">FAN<span>system</span></a>
             <!--logo end-->
             <div class="nav notify-row" id="top_menu">
                 <!--  notification start -->
@@ -169,8 +169,8 @@
             <div class="top-nav ">
                 <!--search & user info start-->
                 <ul class="nav pull-right top-menu">
-                    <!-- user login dropdown start-->
-                            <li><button type="button" class="btn btn-white logout-btn" href="login.html"><i class="icon-key"></i> Log Out</a></li>
+                    <!-- user login dropdown start-->                    
+                            <li><a type="button" class="btn btn-white logout-btn" href="logout.php"><i class="icon-key"></i> Log Out</a></li>
                     <!-- user login dropdown end -->
                 </ul>
                 <!--search & user info end-->
@@ -182,7 +182,7 @@
           <div id="sidebar"  class="nav-collapse ">
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">
-                  <li class="follow-ava"><img src="img/follower-avatar.jpg" alt=""></li>
+                  <li class="follow-ava"></li>
                   <li class="active">
                       <a class="" href="index.html">
                           <i class="icon-dashboard"></i>
@@ -192,7 +192,7 @@
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
                           <i class="icon-book"></i>
-                          <span>COM601</span>
+                          <span>COM 601</span>
                           <span class="arrow"></span>
                       </a>
                       <ul class="sub">
@@ -202,7 +202,7 @@
                   </li>
                   <li class="sub-menu">
                       <a href="javascript:;" class="">
-                          <i class="icon-cogs"></i>
+                          <i class="icon-book"></i>
                           <span>COM 602</span>
                           <span class="arrow"></span>
                       </a>
@@ -238,11 +238,36 @@
                                                     <i class="icon-user"></i>
                                                 </div>
                                                 <div class="value terques-border">
-                                                    <h1>Filly</h1>
-                                                    <p>Campbell</p>
+                                                    <div id="forename"></div>
+                                                    <div id="surname"></div>
                                                 </div>
                                             </section>
                                         </div>
+                                        
+                                        <div class="col-lg-3 col-sm-6">
+                                            <section class="panel">
+                                                <div class="symbol blue">
+                                                    <i class="icon-bar-chart"></i>
+                                                </div>
+                                                <div class="value blue-border">
+                                                    <div id="course"></div>
+                                                    <p>Course</p>
+                                                </div>
+                                            </section>
+                                        </div>
+                                        
+                                        <div class="col-lg-3 col-sm-6">
+                                            <section class="panel">
+                                                <div class="symbol yellow">
+                                                    <i class="icon-book"></i>
+                                                </div>
+                                                <div class="value yellow-border">
+                                                    <h1 class="stat_number">4</h1>
+                                                    <p>Assignments</p>
+                                                </div>
+                                            </section>
+                                        </div>
+                                        
                                         <div class="col-lg-3 col-sm-6">
                                             <section class="panel">
                                                 <div class="symbol red">
@@ -256,28 +281,8 @@
                                                 </div>
                                             </section>
                                         </div>
-                                        <div class="col-lg-3 col-sm-6">
-                                            <section class="panel">
-                                                <div class="symbol yellow">
-                                                    <i class="icon-book"></i>
-                                                </div>
-                                                <div class="value yellow-border">
-                                                    <h1 class="stat_number">4</h1>
-                                                    <p>Assignments</p>
-                                                </div>
-                                            </section>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-6">
-                                            <section class="panel">
-                                                <div class="symbol blue">
-                                                    <i class="icon-bar-chart"></i>
-                                                </div>
-                                                <div class="value blue-border">
-                                                    <h1 class="stat_number">74</h1>
-                                                    <p>Average mark</p>
-                                                </div>
-                                            </section>
-                                        </div>
+                                        
+                                        
                                   </footer>
                               </section>
                               <!--follower end-->
@@ -287,134 +292,43 @@
                      
                   </div>
               </div>
-            <div class="row">
+			  <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Dynamic Table
+                            Assignment Overview
                         </header>
                         <div class="panel-body">
                               <div class="adv-table">
-                                  <table  class="display table table-bordered table-striped" id="example">
-                                    <thead>
-                                    <tr>
-                                        <th>Rendering engine</th>
-                                        <th>Browser</th>
-                                        <th>Platform(s)</th>
-                                        <th class="hidden-phone">Engine version</th>
-                                        <th class="hidden-phone">CSS grade</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr class="gradeX">
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center hidden-phone">4</td>
-                                        <td class="center hidden-phone">X</td>
-                                    </tr>
-                                    <tr class="gradeC">
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center hidden-phone">5</td>
-                                        <td class="center hidden-phone">C</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <td class="center hidden-phone">5.5</td>
-                                        <td class="center hidden-phone">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Trident</td>
-                                        <td>Internet
-                                            Explorer 6</td>
-                                        <td>Win 98+</td>
-                                        <td class="center hidden-phone">6</td>
-                                        <td class="center hidden-phone">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 7</td>
-                                        <td>Win XP SP2+</td>
-                                        <td class="center hidden-phone">7</td>
-                                        <td class="center hidden-phone">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Trident</td>
-                                        <td>AOL browser (AOL desktop)</td>
-                                        <td>Win XP</td>
-                                        <td class="center hidden-phone">6</td>
-                                        <td class="center hidden-phone">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Firefox 1.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center hidden-phone">1.7</td>
-                                        <td class="center hidden-phone">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Firefox 1.5</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center hidden-phone">1.8</td>
-                                        <td class="center hidden-phone">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Firefox 2.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center hidden-phone">1.8</td>
-                                        <td class="center hidden-phone">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Firefox 3.0</td>
-                                        <td>Win 2k+ / OSX.3+</td>
-                                        <td class="center hidden-phone">1.9</td>
-                                        <td class="center hidden-phone">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Camino 1.0</td>
-                                        <td>OSX.2+</td>
-                                        <td class="center hidden-phone">1.8</td>
-                                        <td class="center hidden-phone">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Camino 1.5</td>
-                                        <td>OSX.3+</td>
-                                        <td class="center hidden-phone">1.8</td>
-                                        <td class="center hidden-phone">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Netscape 7.2</td>
-                                        <td>Win 95+ / Mac OS 8.6-9.2</td>
-                                        <td class="center hidden-phone">1.7</td>
-                                        <td class="center hidden-phone">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Netscape Browser 8</td>
-                                        <td>Win 98SE+</td>
-                                        <td class="center hidden-phone">1.7</td>
-                                        <td class="center hidden-phone">A</td>
-                                    </tr>
-                        </table>
+                              	<table class="display table table-bordered table-striped studentTable" id="example">
+	                                    <thead>
+	                                    <tr>
+	                                        <th>User ID</th>
+									        <th>Feedback URL</th>
+									        <th>First Viewed</th>
+									        <th>Last Viewed</th>
+									        <th>View Count</th>
+									        <th>Assignent Name</th>
+									        <th>Module</th>
+	                                    </tr>
+	                                    </thead>
+	                                    <tbody>
+	                                    
+	                                    	<tr>
+												<td colspan="5" class="dataTables_empty">Loading data from server</td>
+											</tr>
+	                                    
+	                                    </tbody>
+                                    
+									</table>
                               </div>
                         </div>
                     </section>
                 </div>
-            </div>
-
+            </div> <!-- row -->
+            
+            
+            
           </section>
       </section>
       <!--main content end-->
@@ -422,29 +336,25 @@
 
     <!-- js placed at the end of the document so the pages load faster -->
 
-    <script src="js/jquery-1.8.3.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
 
-    <script src="assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
-    <script src="js/jquery.customSelect.min.js" ></script>
+    <script src="../assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
+    <script src="../js/jquery.customSelect.min.js" ></script>
 
-    <script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.js"></script>
-    <script type="text/javascript" language="javascript" src="assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" language="javascript" src="../assets/advanced-datatable/media/js/jquery.js"></script>
+    <script type="text/javascript" language="javascript" src="../assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
 
     <!--common script for all pages-->
-    <script src="js/application.js"></script>
+    <script src="../js/application.js"></script>
 
     <!--script for this page-->
 
-    <script src="js/easy-pie-chart.js"></script>
+    <script src="../js/easy-pie-chart.js"></script>
 
       <!--script for this page only-->
 
         <script type="text/javascript" charset="utf-8">
-            $(document).ready(function() {
-                $('#example').dataTable( {
-                    "aaSorting": [[ 4, "desc" ]]
-                } );
 
                 function count($this){
                      var current = parseInt($this.html(), 10);
@@ -465,6 +375,68 @@
                 
             } );
 
+        </script>
+        
+        <script>
+            $(document).ready(function() {
+                //set var with url and locate file
+                var url = "../controller/details.php";
+
+                $.getJSON(url,function(dat){
+                   
+                        //append the data from the array
+                        $("#forename").append(
+                            '<h1><span>'+ dat.forename +'</span></h1>'
+
+                        );
+                        
+                         //append the data from the array
+                        $("#surname").append(
+                            '<p>'+ dat.surname +'</p>'
+
+                        );
+                        
+                         //append the data from the array
+                        $("#course").append(
+                            '<h1>'+ dat.course_id +'</h1>'
+
+                        );
+
+
+						 //append the data from the array
+                        $(".follow-ava").append(
+                            '<img src="../'+dat.img_url+'"/>'
+
+                        );
+
+                });
+
+                //other script here
+
+
+            });
+        
+
+        </script>
+        
+        <script>
+        	$(document).ready(function() {
+				$('#example').dataTable( {
+					"bProcessing": true,
+					"sAjaxSource": "../controller/studentDatatable.php",
+			        "aoColumns": [
+			            { "aaData": "user_id" },
+			            { "aaData": "feedback_url" },
+			            { "aaData": "first_viewed" },
+			            { "aaData": "last_viewed" },
+			            { "aaData": "view_count" },
+						{ "aaData": "assignment_name" },
+						{ "aaData": "module" },
+
+
+			        ]
+				} );
+			} );
         </script>
 
  
