@@ -176,150 +176,149 @@
             <button class="modal">Hello</button>
 
              
-              <div class="row">
-                          <div class="col-xs-12">
-                              <!--follower start-->
-                              <section class="panel">
+                       <div class="row">
+           
+           		<div class="col-xs-6">
+			   		<div class="panel-group m-bot20" id="accordion">
+                          <div class="panel panel-default">
+                              <div class="panel-heading">
+                                  <h4 class="panel-title">
+                                      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="general.html#collapseOne">
+                                          COM 602 required reading
+                                      </a>
+                                  </h4>
+                              </div>
+                              <div id="collapseOne" class="panel-collapse collapse" style="height: 0px;">
+                                  <div class="panel-body">
+                                  	<h3>HTML5 Canvas</h3>
+                                      <p>No matter what platform or tools you use, the HTML5 revolution will soon change the way you build web applications, if it hasn't already. HTML5 is jam-packed with features, and there's a lot to learn. This book gets you started with the Canvas element, perhaps HTML5's most exciting feature. Learn how to build interactive multimedia applications using this element to draw, render text, manipulate images, and create animation.</p>
+
+									  <p>Whether you currently use Flash, Silverlight, or just HTML and JavaScript, you'll quickly pick up the basics. Practical examples show you how to create various games and entertainment applications with Canvas as you learn. Gain valuable experience with HTML5, and discover why leading application developers rave about this specification as the future of truly innovative web development.</p>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="panel panel-default">
+                              <div class="panel-heading">
+                                  <h4 class="panel-title">
+                                      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="general.html#collapseTwo">
+                                          Useful Links
+                                      </a>
+                                  </h4>
+                              </div>
+                              <div id="collapseTwo" class="panel-collapse collapse" style="height: 0px;">
+                                  <div class="panel-body">
+                                  	<p><a href="http://www.createjs.com">CreateJS</a></p>
+                                  	<p><a href="http://kineticjs.com/">KineticJS</a></p>
                                   
-
-                                  <footer class="follower-foot">
-                                    <div class="row state-overview">
-                                        <div class="col-lg-3 col-sm-6">
-                                            <section class="panel">
-                                                <div class="symbol terques">
-                                                    <i class="icon-user"></i>
-                                                </div>
-                                                <div class="value terques-border">
-                                                    <div id="forename"></div>
-                                                    <div id="surname"></div>
-                                                </div>
-                                            </section>
-                                        </div>
-                                        
-                                        <div class="col-lg-3 col-sm-6">
-                                            <section class="panel">
-                                                <div class="symbol blue">
-                                                    <i class="icon-bar-chart"></i>
-                                                </div>
-                                                <div class="value blue-border">
-                                                    <div id="course"></div>
-                                                    <p>Course</p>
-                                                </div>
-                                            </section>
-                                        </div>
-                                        
-                                        <div class="col-lg-3 col-sm-6">
-                                            <section class="panel">
-                                                <div class="symbol yellow">
-                                                    <i class="icon-book"></i>
-                                                </div>
-                                                <div class="value yellow-border">
-                                                    <h1 class="stat_number">4</h1>
-                                                    <p>Assignments</p>
-                                                </div>
-                                            </section>
-                                        </div>
-                                        
-                                        <div class="col-lg-3 col-sm-6">
-                                            <section class="panel">
-                                                <div class="symbol red">
-                                                    <i class="icon-tags"></i>
-                                                </div>
-                                                <div class="value red-border">
-                                                    <h1 class="stat_number">30</h1>
-                                                   <!-- <h1 class="float-right">%</h1>-->
-
-                                                    <p>% average</p>
-                                                </div>
-                                            </section>
-                                        </div>
-                                        
-                                        
-                                  </footer>
-                              </section>
-                              <!--follower end-->
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="panel panel-default">
+                              <div class="panel-heading">
+                                  <h4 class="panel-title">
+                                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="general.html#collapseThree">
+                                          Module Information</a>
+                                  </h4>
+                              </div>
+                              <div id="collapseThree" class="panel-collapse in" style="height: auto;">
+                                  <div class="panel-body">
+                                      <h4>COM602 Web Computer Graphics and Animation</h4>
+									  <p>Computer graphics and animation are important for many applications, including web page design, GUI development, games and simulations, digital photography and cinema, medical and scientific visualisation. This module introduces the subject from the perspective of computing. The student will learn about the hardware, models and algorithms for acquiring, generating, manipulating, displaying, storing and communicating 2D and 3D scenes, digital images, animations and video. The student will also learn how to implement such techniques in computer software and modelling languages.</p>
+                                  </div>
+                              </div>
                           </div>
                       </div>
-                      <!--weather statement start-->
-                     
-                  </div>
-              </div>
-			  <div class="row">
-                <div class="col-lg-12">
-                    <section class="panel">
-                        <header class="panel-heading">
-                            Assignment Overview
-                        </header>
-                        <div class="panel-body">
-                              <div class="adv-table">
-                              	<table class="display table table-bordered table-striped studentTable" id="example">
-	                                    <thead>
-	                                    <tr>
-	                                        <th>User ID</th>
-	                                        <th>Module</th>
-	                                        <th>Assignent Name</th>
-									        <th>Feedback URL</th>
-	                                    </tr>
-	                                    </thead>
-	                                    <tbody>
-	                                    
-	                                    	<tr>
-												<td colspan="5" class="dataTables_empty">Loading data from server</td>
-											</tr>
-	                                    
-	                                    </tbody>
-                                    
-									</table>
-                              </div>
-                        </div>
-                    </section>
-                </div>
-            </div> <!-- row --> 
-            
-            
-            <div class="row">
-              <div class="col-lg-12">
-                <!--new earning start-->
-                <div class="panel terques-chart">
-                    <div class="panel-body ">
-                        <div class="chart">
-                            <div class="heading">
-                                <span>Score out of 100%</span>
-                            </div>
-                            <div class="sparkline" id="linechart-2" data-type="line" data-resize="true" data-height="75" data-width="100%" data-line-width="1" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="4" data-data="[65,89,94,79]"></div>
-                        </div>
-                    </div>
-                    <div class="chart-tittle">
-                        <span class="title">Assignment Marks</span>
-                        <span class="value">
-                            <a href="charts.html#" class="active">COM 601</a>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            </div>
-            
-                     
-            
-			<!-- Modal --> 
-			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <div class="modal-dialog">
-					<div class="modal-content"> 
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-							<h4 class="modal-title" id="myModalLabel">Logout</h4>
-						</div> 
-						<div class="modal-body"> </div> 
-						<div class="modal-footer"> 
-							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-							<button type="button" class="btn btn-primary logout-prim" data-dismiss="modal">Logout</button>
-						</div> 
-					</div><!-- /.modal-content --> 
-				</div><!-- /.modal-dialog --> 
-			</div><!-- /.modal -->    
-			
-			
-			
-	     
+				</div>
+				
+				<div class="col-xs-6">
+				<section class="panel">
+                                  <header class="panel-heading tab-bg-dark-navy-blue">
+                                      <ul class="nav nav-tabs nav-justified ">
+                                          <li class="active">
+                                              <a href="widget.html#popular" data-toggle="tab">
+                                                  Announcements
+                                              </a>
+                                          </li>
+                    
+                                          <li class="">
+                                              <a href="widget.html#recent" data-toggle="tab">
+                                                  Email
+                                              </a>
+                                          </li>
+                                      </ul>
+                                  </header>
+                                  <div class="panel-body">
+                                      <div class="tab-content tasi-tab">
+                                          <div class="tab-pane active" id="popular">
+                                              <article class="media">
+                                                  <a class="pull-left thumb p-thumb">
+                                                      <img src="../img/bond-3.jpg">
+                                                  </a>
+                                                  <div class="media-body">
+                                                      <a class=" p-head" href="widget.html#">feedback</a>
+                                                      <p>Guys, Can you please complete the feedback survey - <a href="https://www.surveymonkey.com/s/6HB8GTK It will only take a few minutes">Link</a>.</p>
+                                                  </div>
+                                              </article>
+                                              <article class="media">
+                                                  <a class="pull-left thumb p-thumb">
+                                                      <img src="../img/bond-3.jpg">
+                                                  </a>
+                                                  <div class="media-body">
+                                                      <a class=" p-head" href="widget.html#">Tuesday's lecture</a>
+                                                      <p>Guys, Please make sure you attend Tuesday's lecture at 3.15. I will present Stereoscopy 3D and let you play with some technology. I will also present some PhD opportunities and hopefully the answers from week 6's class test.</p>
+                                                  </div>
+                                              </article>
+                                          </div>
+                                          <div class="tab-pane" id="recent">
+                                              <article class="media">
+                                                  <a class="pull-left thumb p-thumb">
+                                                      <img src="../img/bond-3.jpg">
+                                                  </a>
+                                                  <div class="media-body">
+                                                      <a class=" p-head" href="#">Class Test on Monday at 11.15</a>
+                                                      <p>Dear all,Remember your class test will be on Monday at 11.15 in the iMac suite. The test is worth 25% of the module. Please revise all slides from week 6. Remember to bring a calculator as you may need it. And the class test is closed book so you cant have notes sitting on your desk. Also please do not complete the class test on your own notebook - please use a lab machine. </p>
+                                                  </div>
+                                              </article>
+                                              
+                                              <article class="media">
+                                                  <a class="pull-left thumb p-thumb">
+                                                      <img src="../img/bond-3.jpg">
+                                                  </a>
+                                                  <div class="media-body">
+                                                      <a class=" p-head" href="#">COM602 ( 61491 ) -  Tuesday's lecture</a>
+                                                      <p>2nd December 2012</p>
+                                                  </div>
+                                              </article>
+                                              
+                                              <article class="media">
+                                                  <a class="pull-left thumb p-thumb">
+                                                      <img src="../img/bond-3.jpg">
+                                                  </a>
+                                                  <div class="media-body">
+                                                      <a class=" p-head" href="#">Class Test on Monday at 11.15</a>
+                                                      <p>29th Novemner 2012</p>
+                                                  </div>
+                                              </article>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </section>
+				</div>
+				
+				
+           </div> <!-- row -->
+           
+           
+           
+           
+           
+
+
+
+
+
+    
+         
           </section>
       </section>
       <!--main content end-->

@@ -9,7 +9,7 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="http://thevectorlab.net/flatlab/img/favicon.png">
 
-    <title>FAN System</title>
+    <title>FAN System - COM601 Assignments</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -19,6 +19,8 @@
     <!--external css-->
     <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="../assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+    
+    <link href="../assets/dropzone/css/dropzone.css" rel="stylesheet"/>
     <!-- Custom styles for this template -->
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/style-responsive.css" rel="stylesheet" />
@@ -110,59 +112,7 @@
                         </ul>
                     </li>
                     <!-- inbox dropdown end -->
-                    <!-- notification dropdown start-->
-                    <li id="header_notification_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-
-                            <i class="icon-bell-alt"></i>
-                            <span class="badge bg-warning">7</span>
-                        </a>
-                        <ul class="dropdown-menu extended notification">
-                            <div class="notify-arrow notify-arrow-yellow"></div>
-                            <li>
-                                <p class="yellow">You have 7 new notifications</p>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <span class="label label-danger"><i class="icon-bolt"></i></span>
-                                    Server #3 overloaded.
-                                    <span class="small italic">34 mins</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <span class="label label-warning"><i class="icon-bell"></i></span>
-                                    Server #10 not respoding.
-                                    <span class="small italic">1 Hours</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <span class="label label-danger"><i class="icon-bolt"></i></span>
-                                    Database overloaded 24%.
-                                    <span class="small italic">4 hrs</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <span class="label label-success"><i class="icon-plus"></i></span>
-                                    New user registered.
-                                    <span class="small italic">Just now</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <span class="label label-info"><i class="icon-bullhorn"></i></span>
-                                    Application error.
-                                    <span class="small italic">10 mins</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">See all notifications</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- notification dropdown end -->
+                    
                 </ul>
                 <!--  notification end -->
             </div>
@@ -170,7 +120,7 @@
                 <!--search & user info start-->
                 <ul class="nav pull-right top-menu">
                     <!-- user login dropdown start-->                    
-                            <li><button type="button" class="btn btn-white logout-btn" href="logout.php"><i class="icon-key"></i> Log Out</button></li>
+                            <li><a type="button" class="btn btn-white logout-btn" data-toggle="modal" data-target="#myModal"><i class="icon-key"></i> Log Out</a></li>
                     <!-- user login dropdown end -->
                 </ul>
                 <!--search & user info end-->
@@ -184,7 +134,7 @@
               <ul class="sidebar-menu">
                   <li class="follow-ava"></li>
                   <li class="active">
-                      <a class="" href="index.html">
+                      <a class="" href="student.php">
                           <i class="icon-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
@@ -196,8 +146,9 @@
                           <span class="arrow"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="general.html">Assignment 1</a></li>
-                          <li><a class="" href="buttons.html">Assignment 2</a></li>
+                          <li><a class="" href="com601-assignment1.php"><i class="icon-file-text"></i> Assignment 1</a></li>
+                          <li><a class="" href="com601-assignment2.php"><i class="icon-file-text"></i> Assignment 2</a></li>
+                          <li><a class="" href="com601-resources.php"><i class="icon-archive"></i> Resources</a></li>
                       </ul>
                   </li>
                   <li class="sub-menu">
@@ -207,8 +158,9 @@
                           <span class="arrow"></span>
                       </a>
                       <ul class="sub">
-                          <li><a class="" href="grids.html">Assignment1</a></li>
-                          <li><a class="" href="calendar.html">Assignment 2</a></li>
+                          <li><a class="" href="com602-assignment1.php"><i class="icon-file-text"></i> Assignment 1</a></li>
+                          <li><a class="" href="com601-assignment2.php"><i class="icon-file-text"></i> Assignment 2</a></li>
+                          <li><a class="" href="com602-assignment.php"><i class="icon-archive"></i>Resources</a></li>
                           
                       </ul>
                   </li>
@@ -222,94 +174,28 @@
 
           <section class="wrapper">
             <button class="modal">Hello</button>
-
-             
-              <div class="row">
-                          <div class="col-xs-12">
-                              <!--follower start-->
-                              <section class="panel">
-                                  
-
-                                  <footer class="follower-foot">
-                                    <div class="row state-overview">
-                                        <div class="col-lg-3 col-sm-6">
-                                            <section class="panel">
-                                                <div class="symbol terques">
-                                                    <i class="icon-user"></i>
-                                                </div>
-                                                <div class="value terques-border">
-                                                    <div id="forename"></div>
-                                                    <div id="surname"></div>
-                                                </div>
-                                            </section>
-                                        </div>
-                                        
-                                        <div class="col-lg-3 col-sm-6">
-                                            <section class="panel">
-                                                <div class="symbol blue">
-                                                    <i class="icon-bar-chart"></i>
-                                                </div>
-                                                <div class="value blue-border">
-                                                    <div id="course"></div>
-                                                    <p>Course</p>
-                                                </div>
-                                            </section>
-                                        </div>
-                                        
-                                        <div class="col-lg-3 col-sm-6">
-                                            <section class="panel">
-                                                <div class="symbol yellow">
-                                                    <i class="icon-book"></i>
-                                                </div>
-                                                <div class="value yellow-border">
-                                                    <h1 class="stat_number">4</h1>
-                                                    <p>Assignments</p>
-                                                </div>
-                                            </section>
-                                        </div>
-                                        
-                                        <div class="col-lg-3 col-sm-6">
-                                            <section class="panel">
-                                                <div class="symbol red">
-                                                    <i class="icon-tags"></i>
-                                                </div>
-                                                <div class="value red-border">
-                                                    <h1 class="stat_number">30</h1>
-                                                   <!-- <h1 class="float-right">%</h1>-->
-
-                                                    <p>% average</p>
-                                                </div>
-                                            </section>
-                                        </div>
-                                        
-                                        
-                                  </footer>
-                              </section>
-                              <!--follower end-->
-                          </div>
-                      </div>
-                      <!--weather statement start-->
-                     
-                  </div>
-              </div>
-			  <div class="row">
+            
+            
+            
+            
+            
+            
+            <div class="row">
                 <div class="col-lg-12">
                     <section class="panel">
                         <header class="panel-heading">
-                            Assignment Overview
+                            COM 601 Assignment One
                         </header>
                         <div class="panel-body">
                               <div class="adv-table">
-                              	<table class="display table table-bordered table-striped studentTable" id="example">
+                              	<table class="display table table-bordered table-striped studentTable" id="com601Assignments">
 	                                    <thead>
 	                                    <tr>
 	                                        <th>User ID</th>
+	                                        <th>Module</th>
+	                                        <th>Assignent Name</th>
+	                                        <th>Assignent Brief</th>
 									        <th>Feedback URL</th>
-									        <th>First Viewed</th>
-									        <th>Last Viewed</th>
-									        <th>View Count</th>
-									        <th>Assignent Name</th>
-									        <th>Module</th>
 	                                    </tr>
 	                                    </thead>
 	                                    <tbody>
@@ -325,10 +211,109 @@
                         </div>
                     </section>
                 </div>
-            </div> <!-- row -->
+            </div> <!-- row --> 
             
             
+          
+
+           
+           <div class="row">
+
+                <div class="col-xs-6">
+
+                  <div class="panel">
+
+                    <div class="panel-body">
+                                                    
+
+                      <div id="leaveComment">  
+                          
+                          <header class="panel-heading">
+                            Leave a Comment
+                        </header>  
+
+                          <div class="form-group">
+                          <label>Module Title &amp; Assignment Num</label>
+                          <input type="text" class="form-control" placeholder="Module &amp; Assignment ID">
+                        </div>
+
+                        <div class="form-group">
+                          <label>Comment:</label>
+                          <textarea class="form-control" rows="3" placeholder="Insert Comment"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                          <div class="checkbox">
+                            <label>
+                              <input type="checkbox" value="1"> Share with Lecture
+                            </label>
+                          </div>
+
+                          <button id="add" type="submit" class="btn btn-default">Add</button> 
+                        </div> 
+
+                        </div>  
+
+                    </div>
+
+                  </div>
+
+              </div>
+
+
+              <div class="col-xs-6">
+
+                  <div class="panel">
+
+                    <div class="panel-body comments">
+                    
+                        <div id="comments">  
+                          <header class="panel-heading">
+                            Reader Comments
+                        </header>  
+                        </div>  
+
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+            </div>
             
+            
+			<!-- Modal --> 
+			<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> <div class="modal-dialog">
+					<div class="modal-content"> 
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title" id="myModalLabel">Logout</h4>
+						</div> 
+						<div class="modal-body"> </div> 
+						<div class="modal-footer"> 
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+							<button type="button" class="btn btn-primary logout-prim" data-dismiss="modal">Logout</button>
+						</div> 
+					</div><!-- /.modal-content --> 
+				</div><!-- /.modal-dialog --> 
+			</div><!-- /.modal -->    
+			
+			
+			
+      
+           
+           
+           
+           
+
+
+
+
+
+    
+         
           </section>
       </section>
       <!--main content end-->
@@ -341,6 +326,10 @@
 
     <script src="../assets/jquery-easy-pie-chart/jquery.easy-pie-chart.js"></script>
     <script src="../js/jquery.customSelect.min.js" ></script>
+    <script src="../assets/dropzone/dropzone.js"></script>
+    
+    <script src="../js/jquery.sparkline.js" type="text/javascript"></script>
+    <script src="../js/sparkline-chart.js"></script>
 
     <script type="text/javascript" language="javascript" src="../assets/advanced-datatable/media/js/jquery.js"></script>
     <script type="text/javascript" language="javascript" src="../assets/advanced-datatable/media/js/jquery.dataTables.js"></script>
@@ -372,8 +361,7 @@
                     
                     count($(this));
                 });
-                
-            } );
+               
 
         </script>
         
@@ -408,6 +396,11 @@
                             '<img src="../'+dat.img_url+'"/>'
 
                         );
+                        
+                        $(".modal-body").append(
+                            '<h4>Are you sure you want to logout ' + dat.user_id + ' ?</h4>'
+
+                        );
 
                 });
 
@@ -426,18 +419,117 @@
 					"sAjaxSource": "../controller/studentDatatable.php",
 			        "aoColumns": [
 			            { "aaData": "user_id" },
-			            { "aaData": "feedback_url" },
-			            { "aaData": "first_viewed" },
-			            { "aaData": "last_viewed" },
-			            { "aaData": "view_count" },
-						{ "aaData": "assignment_name" },
-						{ "aaData": "module" },
-
+			            { "aaData": "module" },
+			            { "aaData": "assignment_name" },
+			            { "aaData": "feedback_url" }
 
 			        ]
 				} );
-			} );
+				
+				
+				$(".logout-prim").click(function(){
+				            setTimeout(function(){
+				              window.location.href="logout.php";
+				            },800);
+				                             
+				        });
+				});
+           
         </script>
+        
+        
+        <script type="text/javascript">  
+            $(function() {  
+                    
+              //retrieve comments to display on page  
+              $.getJSON("../controller/comments.php?jsoncallback=?", function(data) {  
+                            
+                //loop through all items in the JSON array  
+                for (var x = 0; x < data.length; x++) {  
+                                
+                  //create a container for each comment  
+                  var div = $("<div>").addClass("panel-body col-lg-12").appendTo("#comments");  
+                                    
+                  //add author name and comment to container                
+                  $("<label>").text(data[x].module_ass).appendTo(div);             
+                  $("<div>").addClass("comment").text(data[x].comment_body).appendTo(div);  
+               }
+              }); 
+        
+        //add click handler for button
+        $("#add").click(function() {
+        
+          //define ajax config object
+          var ajaxOpts = {
+            type: "post",
+            url: "../controller/addComment.php",
+            data: "&module_ass=" + $("#leaveComment").find("input").val() + "&comment_body=" + $("#leaveComment").find("textarea").val(),
+            success: function(data) {
+              
+              //create a container for the new comment
+              var div = $("<div>").addClass("row").appendTo("#comments");
+            
+              //add author name and comment to container
+              $("<label>").text($("#leaveComment").find("input").val()).appendTo(div);
+              $("<div>").addClass("comment").text($("#leaveComment").find("textarea").val()).appendTo(div);
+              
+              //empty inputs
+              $("#leaveComment").find("input").val("");
+              $("#leaveComment").find(".form-controltextarea").val("");
+            }
+          };
+          
+          $.ajax(ajaxOpts);
+        
+        });   
+      });            
+    </script> 
+    
+    
+    
+    
+            <script>
+        	$(document).ready(function() {
+				$('#com601Assignments').dataTable( {
+					"bProcessing": true,
+					"sAjaxSource": "../controller/com601Datatable2.php",
+			        "aoColumns": [
+			            { "aaData": "user_id" },
+			            { "aaData": "module" },
+			            { "aaData": "assignment_name" },
+			            { "aaData": "assignment_brief" },
+			            { "aaData": "feedback_url" }
+
+			        ]
+				} );
+
+				});
+           
+        </script>
+        
+                    <script>
+        	$(document).ready(function() {
+				$('#com602Assignments').dataTable( {
+					"bProcessing": true,
+					"sAjaxSource": "../controller/com602Datatable.php",
+			        "aoColumns": [
+			            { "aaData": "user_id" },
+			            { "aaData": "module" },
+			            { "aaData": "assignment_name" },
+			            { "aaData": "assignment_brief" },
+			            { "aaData": "feedback_url" }
+
+			        ]
+				} );
+
+				});
+           
+        </script>
+        
+       
+        
+        
+
 
  
 

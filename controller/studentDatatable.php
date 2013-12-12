@@ -19,7 +19,9 @@
 	/* Array of database columns which should be read and sent back to DataTables. Use a space where
 	 * you want to insert a non-database field (for example a counter or static image)
 	 */
-	$aColumns = array( 'user_id', 'feedback_url', 'first_viewed', 'last_viewed', 'view_count', 'assignment_name', 'module' );
+	 
+	 
+	$aColumns = array( 'user_id', 'module','assignment_name', 'feedback_url' );
 	
 	/* Indexed column (used for fast and accurate table cardinality) */
 	$sIndexColumn = "user_id";

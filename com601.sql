@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 11, 2013 at 06:24 PM
+-- Generation Time: Dec 13, 2013 at 12:31 AM
 -- Server version: 5.5.25
 -- PHP Version: 5.4.4
 
@@ -53,17 +53,22 @@ CREATE TABLE `comment` (
   `assignment_id` int(3) DEFAULT NULL,
   `comment_body` varchar(1000) DEFAULT NULL,
   `private` tinyint(1) DEFAULT NULL,
+  `module_ass` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`comment_id`),
   KEY `assignment_id` (`assignment_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `comment`
 --
 
-INSERT INTO `comment` (`comment_id`, `user_id`, `assignment_id`, `comment_body`, `private`) VALUES
-(1, 'B00560248', 1, 'This is a test', 0);
+INSERT INTO `comment` (`comment_id`, `user_id`, `assignment_id`, `comment_body`, `private`, `module_ass`) VALUES
+(1, 'B00560248', 1, 'This is a test', 0, NULL),
+(2, 'b00564645', NULL, ' Is dick :) ', NULL, ' COM 602 - Assignment One'),
+(3, 'b00564645', NULL, ' iuhouh ', NULL, ' ugug'),
+(4, 'b00564645', NULL, ' rab is a tool ', NULL, ' COM 601'),
+(5, 'b00564645', NULL, ' kuykhih ', NULL, ' htut');
 
 -- --------------------------------------------------------
 
@@ -83,7 +88,6 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`course_id`, `name`, `campus`) VALUES
-('', '', ''),
 ('ICT', 'Information Communication Technology', 'Jordanstown'),
 ('IMD', 'Interactive Multimedia Design', 'Jordanstown');
 
@@ -126,8 +130,8 @@ CREATE TABLE `module` (
 --
 
 INSERT INTO `module` (`CRN`, `module_name`, `module_description`, `year`) VALUES
-(61491, 'COM602', 'Web graphics & animation', 4),
-(68818, 'COM601', 'Learn jQuery', 4),
+(61491, 'COM602', 'Web Comp Graphics & Animation', 4),
+(68818, 'COM601', 'Rich Internet Application Development', 4),
 (71216, 'COM533', 'Final Year Project for IMD & ICT', 4);
 
 -- --------------------------------------------------------
@@ -174,10 +178,11 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `forename`, `surname`, `email`, `password`, `course_id`, `role`, `img_url`) VALUES
-('B00560248', 'Chris', 'Marks', 'c@boo.com', 'password', 'IMD', 'student', NULL),
-('b00564645', 'gareth', 'donaldson', 'g@boo.com', 'password', 'IMD', 'student', 'img/avatar1_small.jpg'),
-('B00564646', 'Gareth', 'Donaldson', 'g@g.co.uk', 'password', 'IMD', 'student', NULL),
-('E00000001', 'pete', 'nicholl', 'p@boo.com', 'password', '', 'staff', NULL);
+('B00526614', 'Filly', 'Campbell', 'f@boo.com', 'password', 'IMD', 'student', 'img/avatar1_small.jpg'),
+('B00535355', 'Rab', 'McKee', 'r@boo.com', 'password', 'IMD', 'student', 'img/rabhimself.jpg'),
+('B00560248', 'Chris', 'Marks', 'c@boo.com', 'password', 'IMD', 'student', 'img/chris.jpg'),
+('B00564645', 'Gareth', 'Donaldson', 'g@boo.com', 'password', 'IMD', 'student', 'img/gareth.jpg'),
+('E213535', 'Peter', 'Nicholl', 'p@boo.com', 'password', 'IMD', 'staff', 'img/nicholl.jpg');
 
 -- --------------------------------------------------------
 
@@ -195,6 +200,9 @@ CREATE TABLE `user_assignment` (
   `Module` varchar(100) DEFAULT NULL,
   `module_name` varchar(300) DEFAULT NULL,
   `assignment_name` varchar(100) DEFAULT NULL,
+  `forname` varchar(30) DEFAULT NULL,
+  `surname` varchar(50) DEFAULT NULL,
+  `assignment_brief` varchar(100) DEFAULT NULL,
   KEY `assignment_id` (`assignment_id`),
   KEY `user_id` (`user_id`),
   KEY `assignment_name` (`assignment_name`)
@@ -204,10 +212,23 @@ CREATE TABLE `user_assignment` (
 -- Dumping data for table `user_assignment`
 --
 
-INSERT INTO `user_assignment` (`user_id`, `assignment_id`, `feedback_url`, `first_viewed`, `last_viewed`, `view_count`, `Module`, `module_name`, `assignment_name`) VALUES
-('B00560248', 1, 'http://www.google.com', '2013-11-02 12:00:00', '2013-11-03 12:00:00', 1, 'COM601', 'web app development', 'Rich Internet Application Assignment 1 '),
-('B00564645', 1, 'http://www.ebay.co.uk', '2013-11-02 12:00:00', '2013-11-03 12:00:00', 2, 'COM601', 'web app development', 'Rich Internet Application Assignment 1 '),
-('B00564645', 2, 'http://www.yahoo.co.uk', '2013-11-02 12:00:00', '2013-11-03 12:00:00', 3, 'COM601', 'web app development 2', 'Web Graphics & Animation Assignment 1');
+INSERT INTO `user_assignment` (`user_id`, `assignment_id`, `feedback_url`, `first_viewed`, `last_viewed`, `view_count`, `Module`, `module_name`, `assignment_name`, `forname`, `surname`, `assignment_brief`) VALUES
+('B00526614', 1, '<a href="../uploads/b00526614-com601-ass1.pdf" target="_blank">View PDF</a>', '2013-11-02 12:00:00', '2013-11-02 12:00:00', 1, 'COM 601', 'Rich Internet Application Development', 'Assignment 1', 'Filly', 'Campbell', '<a href="../uploads/com601-assignmentBrief.pdf" target="_blank">View Brief</a>'),
+('B00564645', 2, '<a href="../uploads/b00564645-com601-ass2.pdf" target="_blank">View PDF</a>', '2013-11-02 12:00:00', '2013-11-02 12:00:00', 1, 'COM 601', 'Rich Internet Application Development', 'Assignment 2', 'Gareth', 'Donaldson', '<a href="../uploads/com601-assignmentBrief-2.pdf" target="_blank">View Brief</a>'),
+('B00564645', 1, '<a href="../uploads/b00564645-com601-ass1.pdf" target="_blank">View PDF</a>', '2013-11-02 12:00:00', '2013-11-02 12:00:00', 1, 'COM 601', 'Rich Internet Application Development', 'Assignment 1', 'Gareth', 'Donaldson', '<a href="../uploads/com601-assignmentBrief.pdf" target="_blank">View Brief</a>'),
+('B00526614', 2, '<a href="../uploads/b00526614-com601-ass2.pdf" target="_blank">View PDF</a>', '2013-11-02 12:00:00', '2013-11-02 12:00:00', 1, 'COM 601', 'Rich Internet Application Development', 'Assignment 2', 'Filly', 'Campbell', '<a href="../uploads/com601-assignmentBrief-2.pdf" target="_blank">View Brief</a>'),
+('B00560248', 1, '<a href="../uploads/b00560248-com601-ass1.pdf" target="_blank">View PDF</a>', '2013-11-02 12:00:00', '2013-11-02 12:00:00', 1, 'COM 601', 'Rich Internet Application Development', 'Assignment 1', 'Chris', 'Marks', '<a href="../uploads/com601-assignmentBrief.pdf" target="_blank">View Brief</a>'),
+('B00560248', 2, '<a href="../uploads/b00560248-com601-ass2.pdf" target="_blank">View PDF</a>', '2013-11-02 12:00:00', '2013-11-02 12:00:00', 1, 'COM 601', 'Rich Internet Application Development', 'Assignment 2', 'Chris', 'Marks', '<a href="../uploads/com601-assignmentBrief-2.pdf" target="_blank">View Brief</a>'),
+('B00535355', 1, '<a href="../uploads/b00535355-com601-ass1.pdf" target="_blank">View PDF</a>', NULL, NULL, 0, 'COM 601', 'Rich Internet Application Development', 'Assignment 1', 'Rab', 'McKee', '<a href="../uploads/com601-assignmentBrief.pdf" target="_blank">View Brief</a>'),
+('B00535355', 2, '<a href="../uploads/b00535355-com601-ass2.pdf" target="_blank">View PDF</a>', '2013-11-02 12:00:00', '2013-11-02 12:00:00', 1, 'COM 601', 'Rich Internet Application Development', 'Assignment 2', 'Rab', 'McKee', '<a href="../uploads/com601-assignmentBrief-2.pdf" target="_blank">View Brief</a>'),
+('B00535355', 1, '<a href="../uploads/b00535355-com602-ass1.pdf" target="_blank">View PDF</a>', '2013-11-02 12:00:00', '2013-11-02 12:00:00', 1, 'COM 602', 'Web Comp Graphics & Animation', 'Assignment 1', 'Rab', 'McKee', '<a href="../uploads/com602-assignmentBrief.pdf" target="_blank">View Brief</a>'),
+('B00564645', 2, '<a href="../uploads/b00564645-com602-ass2.pdf" target="_blank">View PDF</a>', '2013-11-02 12:00:00', '2013-11-02 12:00:00', 1, 'COM 602', 'Web Comp Graphics & Animation', 'Assignment 2', 'Gareth', 'Donaldson', '<a href="../uploads/com602-assignmentBrief-2.pdf" target="_blank">View Brief</a>'),
+('B00564645', 1, '<a href="../uploads/b00564645-com602-ass1.pdf" target="_blank">View PDF</a>', NULL, NULL, 0, 'COM 602', 'Web Comp Graphics & Animation', 'Assignment 1', 'Gareth', 'Donaldson', '<a href="../uploads/com602-assignmentBrief.pdf" target="_blank">View Brief</a>'),
+('B00535355', 2, '<a href="../uploads/b00535355-com602-ass2.pdf" target="_blank">View PDF</a>', NULL, NULL, 0, 'COM 602', 'Web Comp Graphics & Animation', 'Assignment 2', 'Rab', 'McKee', '<a href="../uploads/com602-assignmentBrief-2.pdf" target="_blank">View Brief</a>'),
+('B00526614', 1, '<a href="../uploads/b00526614-com602-ass1.pdf" target="_blank">View PDF</a>', '2013-11-02 12:00:00', '2013-11-02 12:00:00', 1, 'COM 602', 'Web Comp Graphics & Animation', 'Assignment 1', 'Filly', 'Campbell', '<a href="../uploads/com602-assignmentBrief.pdf" target="_blank">View Brief</a>'),
+('B00526614', 2, '<a href="../uploads/b00526614-com602-ass2.pdf" target="_blank">View PDF</a>', '2013-11-02 12:00:00', '2013-11-02 12:00:00', 1, 'COM 602', 'Web Comp Graphics & Animation', 'Assignment 2', 'Filly', 'Campbell', '<a href="../uploads/com602-assignmentBrief-2.pdf" target="_blank">View Brief</a>'),
+('B00560248', 1, '<a href="../uploads/b00560248-com602-ass1.pdf" target="_blank">View PDF</a>', NULL, NULL, 0, 'COM 602', 'Web Comp Graphics & Animation', 'Assignment 1', 'Chris', 'Marks', '<a href="../uploads/com602-assignmentBrief.pdf" target="_blank">View Brief</a>'),
+('B00560248', 2, '<a href="../uploads/b00560248-com602-ass2.pdf" target="_blank">View PDF</a>', '2013-11-02 12:00:00', '2013-11-02 12:00:00', 1, 'COM 602', 'Web Comp Graphics & Animation', 'Assignment 2', 'Chris', 'Marks', '<a href="../uploads/com602-assignmentBrief-2.pdf" target="_blank">View Brief</a>');
 
 --
 -- Constraints for dumped tables

@@ -19,10 +19,12 @@
 	/* Array of database columns which should be read and sent back to DataTables. Use a space where
 	 * you want to insert a non-database field (for example a counter or static image)
 	 */
-	 $aColumns = array( 'module', 'assignment_name', 'user_id', 'forname', 'surname', 'feedback_url', 'first_viewed', 'last_viewed', 'view_count' );
+	 
+	 
+	$aColumns = array( 'user_id', 'module','assignment_name', 'assignment_brief', 'feedback_url' );
 	
 	/* Indexed column (used for fast and accurate table cardinality) */
-	$sIndexColumn = "module";
+	$sIndexColumn = "user_id";
 	
 	/* DB table to use */
 	$sTable = "user_assignment";
@@ -130,7 +132,7 @@
 		FROM   $sTable
 		$sWhere
 		$sOrder
-		$sLimit
+		$sLimit WHERE user_id='$myusername' and module='COM 602' and assignment_id='2'
 	";
 	$rResult = mysql_query( $sQuery, $gaSql['link'] ) or die(mysql_error());
 	
