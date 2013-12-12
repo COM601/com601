@@ -12,6 +12,11 @@
         width: 70%;
     }
 
+    ul.sidebar-menu li:first-of-type
+    {
+    display:none;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -29,7 +34,10 @@
         width: 100%;
         z-index: 1001;
     }
-
+    ul.sidebar-menu li:first-of-type
+    {
+    display:none;
+    }
 
     /* body container */
     #main-content {

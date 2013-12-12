@@ -46,69 +46,7 @@
                 <!--  notification start -->
                 <ul class="nav top-menu">
                     <!-- inbox dropdown start-->
-                    <li id="header_inbox_bar" class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
-                            <i class="icon-envelope-alt"></i>
-                            <span class="badge bg-important">5</span>
-                        </a>
-                        <ul class="dropdown-menu extended inbox">
-                            <div class="notify-arrow notify-arrow-red"></div>
-                            <li>
-                                <p class="red">You have 5 new messages</p>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <span class="photo"><img alt="avatar" src="img/avatar-mini.jpg"></span>
-                                    <span class="subject">
-                                    <span class="from">Filly Campbell</span>
-                                    <span class="time">Just now</span>
-                                    </span>
-                                    <span class="message">
-                                        Hello, this is an example msg.
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <span class="photo"><img alt="avatar" src="img/avatar-mini2.jpg"></span>
-                                    <span class="subject">
-                                    <span class="from">Filly</span>
-                                    <span class="time">10 mins</span>
-                                    </span>
-                                    <span class="message">
-                                     Hi, Jhon Doe Bhai how are you ?
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <span class="photo"><img alt="avatar" src="img/avatar-mini3.jpg"></span>
-                                    <span class="subject">
-                                    <span class="from">Jason Stathum</span>
-                                    <span class="time">3 hrs</span>
-                                    </span>
-                                    <span class="message">
-                                        This is awesome dashboard.
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">
-                                    <span class="photo"><img alt="avatar" src="img/avatar-mini4.jpg"></span>
-                                    <span class="subject">
-                                    <span class="from">Jondi Rose</span>
-                                    <span class="time">Just now</span>
-                                    </span>
-                                    <span class="message">
-                                        Hello, this is metrolab
-                                    </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="index.html#">See all messages</a>
-                            </li>
-                        </ul>
-                    </li>
+                   
                     <!-- inbox dropdown end -->
                     <!-- notification dropdown start-->
                     <li id="header_notification_bar" class="dropdown">
@@ -125,7 +63,7 @@
                             <li>
                                 <a href="index.html#">
                                     <span class="label label-danger"><i class="icon-bolt"></i></span>
-                                    Server #3 overloaded.
+                                    Feedback uploaded to Assignment 1
                                     <span class="small italic">34 mins</span>
                                 </a>
                             </li>
@@ -183,6 +121,7 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">
                   <li class="follow-ava"></li>
+                  
                   <li class="active">
                       <a class="" href="index.html">
                           <i class="icon-dashboard"></i>
@@ -247,7 +186,7 @@
                                         <div class="col-lg-3 col-sm-6">
                                             <section class="panel">
                                                 <div class="symbol blue">
-                                                    <i class="icon-bar-chart"></i>
+                                                    <i class="icon-group"></i>
                                                 </div>
                                                 <div class="value blue-border">
                                                     <div id="course"></div>
@@ -271,7 +210,7 @@
                                         <div class="col-lg-3 col-sm-6">
                                             <section class="panel">
                                                 <div class="symbol red">
-                                                    <i class="icon-tags"></i>
+                                                    <i class="icon-tasks"></i>
                                                 </div>
                                                 <div class="value red-border">
                                                     <h1 class="stat_number">30</h1>
@@ -327,7 +266,28 @@
                 </div>
             </div> <!-- row -->
             
-            
+            <div class="row">
+              <div class="col-lg-12">
+                <!--new earning start-->
+                <div class="panel terques-chart">
+                    <div class="panel-body ">
+                        <div class="chart">
+                            <div class="heading">
+                                <span>Score out of 100%</span>
+                            </div>
+                            <div class="sparkline" id="linechart-2" data-type="line" data-resize="true" data-height="75" data-width="100%" data-line-width="1" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff" data-spot-radius="4" data-data="[65,89,94,79]"></div>
+                        </div>
+                    </div>
+                    <div class="chart-tittle">
+                        <span class="title">Assignment Marks</span>
+                        <span class="value">
+                            <a href="charts.html#" class="active">COM 601</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+          
             
           </section>
       </section>
@@ -350,7 +310,8 @@
 
     <!--script for this page-->
 
-    <script src="../js/easy-pie-chart.js"></script>
+    <script src="../js/jquery.sparkline.js" type="text/javascript"></script>
+    <script src="../js/sparkline-chart.js"></script>
 
       <!--script for this page only-->
 
