@@ -9,7 +9,7 @@
     <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
     <link rel="shortcut icon" href="http://thevectorlab.net/flatlab/img/favicon.png">
 
-    <title>FAN System - COM601 Assignments</title>
+    <title>FAN System - COM601 Assignment One</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -133,13 +133,13 @@
               <!-- sidebar menu start-->
               <ul class="sidebar-menu">
                   <li class="follow-ava"></li>
-                  <li class="active">
+                  <li class="">
                       <a class="" href="student.php">
                           <i class="icon-dashboard"></i>
                           <span>Dashboard</span>
                       </a>
                   </li>
-                  <li class="sub-menu">
+                  <li class="sub-menu active">
                       <a href="javascript:;" class="">
                           <i class="icon-book"></i>
                           <span>COM 601</span>
@@ -147,7 +147,7 @@
                       </a>
                       <ul class="sub">
                           <li><a class="" href="com601-assignment1.php"><i class="icon-file-text"></i> Assignment 1</a></li>
-                          <li><a class="" href="com601-assignment2.php"><i class="icon-file-text"></i> Assignment 2</a></li>
+                          <li class="active"><a class="" href="com601-assignment2.php"><i class="icon-file-text"></i> Assignment 2</a></li>
                           <li><a class="" href="com601-resources.php"><i class="icon-archive"></i> Resources</a></li>
                       </ul>
                   </li>
@@ -179,47 +179,43 @@
             
             
             
-            
-            <div class="row">
-                <div class="col-lg-12">
-                    <section class="panel">
-                        <header class="panel-heading">
-                            COM 601 Assignment One
-                        </header>
-                        <div class="panel-body">
-                              <div class="adv-table">
-                              	<table class="display table table-bordered table-striped studentTable" id="com601Assignments">
-	                                    <thead>
-	                                    <tr>
-	                                        <th>User ID</th>
-	                                        <th>Module</th>
-	                                        <th>Assignent Name</th>
-	                                        <th>Assignent Brief</th>
-									        <th>Feedback URL</th>
-	                                    </tr>
-	                                    </thead>
-	                                    <tbody>
-	                                    
-	                                    	<tr>
-												<td colspan="5" class="dataTables_empty">Loading data from server</td>
-											</tr>
-	                                    
-	                                    </tbody>
-                                    
-									</table>
-                              </div>
-                        </div>
-                    </section>
-                </div>
-            </div> <!-- row --> 
+          
+          
+          <div class="row datatables-strip">
+              <div class="col-lg-6">
+                  <section class="panel">
+                      <header class="panel-heading">
+                          Module Brief
+                      </header>
+                      <h1 id="brief"></h1>
+
+                  </section>
+              </div>
+              <div class="col-lg-6">
+                  <section class="panel">
+                      <header class="panel-heading">
+                          Module Feedback
+                      </header>
+                      <h1 id="feedback"></h1>
+                      <!-- Download Feedback<i class="icon-download-alt"></i> -->
+                      
+                  </section>
+              </div>
+          </div> <!-- row --> 
+                      <div class="row datatables-strip">
+                          
+                      </div> <!-- row --> 
+
+                           
+              
             
             
           
 
            
-           <div class="row">
+     <div class="row">
 
-                <div class="col-xs-6">
+                <div class="col-lg-6">
 
                   <div class="panel">
 
@@ -245,11 +241,11 @@
                         <div class="form-group">
                           <div class="checkbox">
                             <label>
-                              <input type="checkbox" value="1"> Share with Lecture
+                              <input type="checkbox" value="Yes" checked="" id="checkbox"> Share with Lecture
                             </label>
                           </div>
 
-                          <button id="add" type="submit" class="btn btn-default">Add</button> 
+                          <button id="add" type="submit" class="btn btn-default" onclick="reloadPage()">Add</button> 
                         </div> 
 
                         </div>  
@@ -261,7 +257,7 @@
               </div>
 
 
-              <div class="col-xs-6">
+              <div class="col-lg-6">
 
                   <div class="panel">
 
@@ -269,7 +265,7 @@
                     
                         <div id="comments">  
                           <header class="panel-heading">
-                            Reader Comments
+                            Your Comments
                         </header>  
                         </div>  
 
@@ -300,18 +296,6 @@
 				</div><!-- /.modal-dialog --> 
 			</div><!-- /.modal -->    
 			
-			
-			
-      
-           
-           
-           
-           
-
-
-
-
-
     
          
           </section>
@@ -343,27 +327,6 @@
 
       <!--script for this page only-->
 
-        <script type="text/javascript" charset="utf-8">
-
-                function count($this){
-                     var current = parseInt($this.html(), 10);
-                     $this.html(++current);
-                     if(current !== $this.data('count')){
-                         setTimeout(function(){count($this)}, 75);
-                     }
-                     
-                     
-                 }        
-                $("h1.stat_number").each(function() {
-                    
-                    $(this).data('count', parseInt($(this).html(), 10));
-                    $(this).html('0');
-                    
-                    count($(this));
-                });
-               
-
-        </script>
         
         <script>
             $(document).ready(function() {
@@ -412,124 +375,146 @@
 
         </script>
         
-        <script>
-        	$(document).ready(function() {
-				$('#example').dataTable( {
-					"bProcessing": true,
-					"sAjaxSource": "../controller/studentDatatable.php",
-			        "aoColumns": [
-			            { "aaData": "user_id" },
-			            { "aaData": "module" },
-			            { "aaData": "assignment_name" },
-			            { "aaData": "feedback_url" }
+          <script>
+          $(document).ready(function() {
+        $('#example').dataTable( {
+          "bProcessing": true,
+          "sAjaxSource": "../controller/studentDatatable.php",
+              "aoColumns": [
+                  { "aaData": "user_id" },
+                  { "aaData": "module" },
+                  { "aaData": "assignment_name" },
+                  { "aaData": "feedback_url" }
 
-			        ]
-				} );
-				
-				
-				$(".logout-prim").click(function(){
-				            setTimeout(function(){
-				              window.location.href="logout.php";
-				            },800);
-				                             
-				        });
-				});
+              ]
+        } );
+        
+        
+        $(".logout-prim").click(function(){
+                    setTimeout(function(){
+                      window.location.href="logout.php";
+                    },800);
+                                     
+                });
+        });
            
         </script>
-        
-        
-        <script type="text/javascript">  
-            $(function() {  
-                    
-              //retrieve comments to display on page  
-              $.getJSON("../controller/comments.php?jsoncallback=?", function(data) {  
-                            
-                //loop through all items in the JSON array  
-                for (var x = 0; x < data.length; x++) {  
-                                
-                  //create a container for each comment  
-                  var div = $("<div>").addClass("panel-body col-lg-12").appendTo("#comments");  
-                                    
-                  //add author name and comment to container                
-                  $("<label>").text(data[x].module_ass).appendTo(div);             
-                  $("<div>").addClass("comment").text(data[x].comment_body).appendTo(div);  
-               }
-              }); 
-        
-        //add click handler for button
-        $("#add").click(function() {
-        
-          //define ajax config object
-          var ajaxOpts = {
-            type: "post",
-            url: "../controller/addComment.php",
-            data: "&module_ass=" + $("#leaveComment").find("input").val() + "&comment_body=" + $("#leaveComment").find("textarea").val(),
-            success: function(data) {
-              
-              //create a container for the new comment
-              var div = $("<div>").addClass("row").appendTo("#comments");
-            
-              //add author name and comment to container
-              $("<label>").text($("#leaveComment").find("input").val()).appendTo(div);
-              $("<div>").addClass("comment").text($("#leaveComment").find("textarea").val()).appendTo(div);
-              
-              //empty inputs
-              $("#leaveComment").find("input").val("");
-              $("#leaveComment").find(".form-controltextarea").val("");
+    
+    
+    
+     <script>
+         $(document).ready(function() {
+             //set var with url and locate file
+             var url = "../controller/downloadFeedback.php";
+
+             $.getJSON(url,function(dat){
+                
+                     //append the data from the array
+                     $("#feedback").append(
+                         '<h1><span>'+ dat.feedback_url +'</span></h1>'
+
+                     );
+
+
+             });
+
+             //other script here
+
+
+         });
+     
+     </script>
+
+     <script>
+         $(document).ready(function() {
+             //set var with url and locate file
+             var url = "../controller/downloadBrief.php";
+
+             $.getJSON(url,function(dat){
+                
+                     //append the data from the array
+                     $("#brief").append(
+                         '<h1><span>'+ dat.assignment_brief +'</span></h1>'
+
+                     );
+
+
+             });
+
+             //other script here
+
+
+         });
+     
+     </script>   
+
+       <script>
+            function reloadPage (){
+              location.reload();
             }
-          };
-          
-          $.ajax(ajaxOpts);
-        
-        });   
-      });            
-    </script> 
-    
-    
-    
-    
-            <script>
-        	$(document).ready(function() {
-				$('#com601Assignments').dataTable( {
-					"bProcessing": true,
-					"sAjaxSource": "../controller/com601Datatable2.php",
-			        "aoColumns": [
-			            { "aaData": "user_id" },
-			            { "aaData": "module" },
-			            { "aaData": "assignment_name" },
-			            { "aaData": "assignment_brief" },
-			            { "aaData": "feedback_url" }
-
-			        ]
-				} );
-
-				});
-           
         </script>
-        
-                    <script>
-        	$(document).ready(function() {
-				$('#com602Assignments').dataTable( {
-					"bProcessing": true,
-					"sAjaxSource": "../controller/com602Datatable.php",
-			        "aoColumns": [
-			            { "aaData": "user_id" },
-			            { "aaData": "module" },
-			            { "aaData": "assignment_name" },
-			            { "aaData": "assignment_brief" },
-			            { "aaData": "feedback_url" }
 
-			        ]
-				} );
+        <script type="text/javascript">  
+                    $(function() {  
+                            
+                      //retrieve comments to display on page  
+                      $.getJSON("../controller/comments.php?jsoncallback=?", function(data) {  
+                                    
+                        //loop through all items in the JSON array  
+                        for (var x = 0; x < data.length; x++) {  
+                                        
+                          //create a container for each comment  
+                          var div = $("<div>").addClass("panel-body col-lg-12").appendTo("#comments");  
+                                            
+                          //add module assignment name and comment to container                
+                          $("<label>").text(data[x].module_ass).appendTo(div); 
+                          $("<div>").text("Shared comment " + data[x].private).appendTo(div);            
+                          $("<div>").addClass("comment").text(data[x].comment_body).appendTo(div);  
+                       }
 
-				});
-           
-        </script>
-        
-       
-        
-        
+                      }); 
+                
+                //add click handler for button
+                $("#add").click(function() {
 
+                  var chkval = "No";
+
+                  if($('#checkbox').is(':checked')){
+                    chkval  = "Yes";
+                  } else {
+                    chkval = "No";
+                  }
+
+
+                
+                  //define ajax config object
+                  var ajaxOpts = {
+                    type: "post",
+                    url: "../controller/addComment.php",
+                    data: "&module_ass=" + $("#leaveComment").find("input").val() + "&comment_body=" + $("#leaveComment").find("textarea").val() + "&private=" +chkval,
+                    success: function(data) {
+                      
+                      //create a container for the new comment
+                      var div = $("<div>").addClass("panel-body col-lg-12").appendTo("#comments");
+                    
+                      //add module, Private and comment to container
+                      $("<label>").text($("#leaveComment").find("input").val()).appendTo(div);
+                      
+                      $("<div>").text($("#leaveComment").find("textarea").val()).appendTo("panel-body col-lg-12");
+
+                      $("<label>").find(":checkbox").val().appendTo(div);
+                      
+                      //empty inputs
+                      $("#leaveComment").find("input").val("");
+                      $("#leaveComment").find(".form-controltextarea").val("");
+                    }
+                  };
+                  
+                  $.ajax(ajaxOpts);
+                
+                });   
+              });            
+            </script>  
 
  
 

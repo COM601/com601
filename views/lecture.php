@@ -276,6 +276,38 @@
                     </section>
                 </div>
             </div> <!-- row -->
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            Comments
+                        </header>
+                        <div class="panel-body">
+                              <div class="adv-table">
+                                <table class="display table table-bordered table-striped studentTable" id="commentPrivate">
+                                      <thead>
+                                      <tr>
+                                          <th>User ID</th>
+                                          <th>Comment</th>
+                                          <th>Module</th>
+                                      </tr>
+                                      </thead>
+                                      <tbody>
+                                      
+                                        <tr>
+                        <td colspan="5" class="dataTables_empty">Loading data from server</td>
+                      </tr>
+                                      
+                                      </tbody>
+                                    
+                  </table>
+                              </div>
+                        </div>
+                    </section>
+                </div>
+            </div> <!-- row -->
             
             
             <div class="row">
@@ -434,6 +466,22 @@
 				                             
 				        });
 				});
+        </script>
+
+        <!-- comments -->
+        <script>
+          $(document).ready(function() {
+              $('#commentPrivate').dataTable( {
+                "bProcessing": true,
+                "sAjaxSource": "../controller/lectureQueryComments.php",
+                    "aoColumns": [
+                      { "aaData": "user_id" },
+                      { "aaData": "comment_body" },
+                        { "aaData": "module_ass" }
+                    ]
+              });
+
+        });
         </script>
 
  

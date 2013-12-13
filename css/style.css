@@ -2261,11 +2261,12 @@ ul.amounts li {
 }
 
 .tab-bg-dark-navy-blue {
-    background: #7087A3;
+    background: #F3948C;
     border-radius: 5px 5px 0 0;
     -webkit-border-radius: 5px 5px 0 0;
     border-bottom: none;
 }
+
 
 .panel-heading .nav > li > a,
 .panel-heading .nav > li.active > a, .panel-heading .nav > li.active > a:hover, .panel-heading .nav > li.active > a:focus {
@@ -2281,6 +2282,7 @@ ul.amounts li {
     color: #47596f;
     background: #fff;
 }
+
 
 .panel-heading .nav > li:first-child.active > a, .panel-heading .nav > li:first-child > a:hover {
     border-radius: 4px 0 0 0;
@@ -3094,6 +3096,9 @@ table.sliders tr td {
     font-weight: 400;
     font-size: 14px;
 }
+.p-head:hover{
+color:#A22013;
+}
 
 .cmt-head {
     font-weight: 400;
@@ -3697,6 +3702,21 @@ tr.odd.gradeX td.sorting_1, tr.even.gradeX td.sorting_1, table.display tr.even.g
   -o-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+
+
+.datatables-strip h1 {
+    text-align: center;
+    font-size: 33px;
+    padding: 0px 0px 5px 9px;
+    font-weight:200;
+}
+.datatables-strip h1 a{
+    text-align:center;
+}
+.resources-heading .panel-heading{
+    background-color:#D8DAE2;
+
 }
 
 

@@ -71,7 +71,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 37, ../sass/screen.scss */
 html {
   -webkit-font-smoothing: antialiased;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); }
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%
+ }
 
 
 
@@ -195,6 +197,7 @@ h2 {
     border: 0;
     padding: 13px 20px;
     color: #fff;
+    cursor: pointer;
     text-transform: uppercase;
     -webkit-appearance: none;
     width: 100%; }
@@ -205,6 +208,7 @@ h2 {
 /* line 146, ../sass/screen.scss */
 #loader {
   margin: 20px auto;
+  padding-top: 20px;
   width: 32px;
   height: 32px; }
 
@@ -217,5 +221,7 @@ h2 {
   box-sizing: border-box;
   margin: 0 auto;
   width: 90%;
-  padding: 5% 5%;
-  text-align: center; }
+  padding: 15% 5%;
+  text-align: center; 
+  font-family: 'Open Sans', sans-serif;
+  color: #6b6b6b;}

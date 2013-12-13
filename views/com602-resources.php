@@ -151,7 +151,7 @@
                           <li><a class="" href="com601-resources.php"><i class="icon-archive"></i> Resources</a></li>
                       </ul>
                   </li>
-                  <li class="sub-menu">
+                  <li class="sub-menu active">
                       <a href="javascript:;" class="">
                           <i class="icon-book"></i>
                           <span>COM 602</span>
@@ -160,7 +160,7 @@
                       <ul class="sub">
                           <li><a class="" href="com602-assignment1.php"><i class="icon-file-text"></i> Assignment 1</a></li>
                           <li><a class="" href="com602-assignment2.php"><i class="icon-file-text"></i> Assignment 2</a></li>
-                          <li><a class="" href="com602-resources.php"><i class="icon-archive"></i>Resources</a></li>
+                          <li class="active"><a class="" href="com602-resources.php"><i class="icon-archive"></i>Resources</a></li>
                           
                       </ul>
                   </li>
@@ -178,7 +178,7 @@
              
                        <div class="row">
            
-           		<div class="col-xs-6">
+           		<div class="col-xs-6 resources-heading">
 			   		<div class="panel-group m-bot20" id="accordion">
                           <div class="panel panel-default">
                               <div class="panel-heading">
@@ -443,53 +443,7 @@
         </script>
         
         
-        <script type="text/javascript">  
-            $(function() {  
-                    
-              //retrieve comments to display on page  
-              $.getJSON("../controller/comments.php?jsoncallback=?", function(data) {  
-                            
-                //loop through all items in the JSON array  
-                for (var x = 0; x < data.length; x++) {  
-                                
-                  //create a container for each comment  
-                  var div = $("<div>").addClass("panel-body col-lg-12").appendTo("#comments");  
-                                    
-                  //add author name and comment to container                
-                  $("<label>").text(data[x].module_ass).appendTo(div);             
-                  $("<div>").addClass("comment").text(data[x].comment_body).appendTo(div);  
-               }
-              }); 
-        
-        //add click handler for button
-        $("#add").click(function() {
-        
-          //define ajax config object
-          var ajaxOpts = {
-            type: "post",
-            url: "../controller/addComment.php",
-            data: "&module_ass=" + $("#leaveComment").find("input").val() + "&comment_body=" + $("#leaveComment").find("textarea").val(),
-            success: function(data) {
-              
-              //create a container for the new comment
-              var div = $("<div>").addClass("row").appendTo("#comments");
-            
-              //add author name and comment to container
-              $("<label>").text($("#leaveComment").find("input").val()).appendTo(div);
-              $("<div>").addClass("comment").text($("#leaveComment").find("textarea").val()).appendTo(div);
-              
-              //empty inputs
-              $("#leaveComment").find("input").val("");
-              $("#leaveComment").find(".form-controltextarea").val("");
-            }
-          };
-          
-          $.ajax(ajaxOpts);
-        
-        });   
-      });            
-    </script> 
-    
+
     
     
     
@@ -533,7 +487,73 @@
         
        
         
-        
+       <script>
+            function reloadPage (){
+              location.reload();
+            }
+        </script>
+
+        <script type="text/javascript">  
+                    $(function() {  
+                            
+                      //retrieve comments to display on page  
+                      $.getJSON("../controller/comments.php?jsoncallback=?", function(data) {  
+                                    
+                        //loop through all items in the JSON array  
+                        for (var x = 0; x < data.length; x++) {  
+                                        
+                          //create a container for each comment  
+                          var div = $("<div>").addClass("panel-body col-lg-12").appendTo("#comments");  
+                                            
+                          //add module assignment name and comment to container                
+                          $("<label>").text(data[x].module_ass).appendTo(div); 
+                          $("<div>").text("Shared comment " + data[x].private).appendTo(div);            
+                          $("<div>").addClass("comment").text(data[x].comment_body).appendTo(div);  
+                       }
+
+                      }); 
+                
+                //add click handler for button
+                $("#add").click(function() {
+
+                  var chkval = "No";
+
+                  if($('#checkbox').is(':checked')){
+                    chkval  = "Yes";
+                  } else {
+                    chkval = "No";
+                  }
+
+
+                
+                  //define ajax config object
+                  var ajaxOpts = {
+                    type: "post",
+                    url: "../controller/addComment.php",
+                    data: "&module_ass=" + $("#leaveComment").find("input").val() + "&comment_body=" + $("#leaveComment").find("textarea").val() + "&private=" +chkval,
+                    success: function(data) {
+                      
+                      //create a container for the new comment
+                      var div = $("<div>").addClass("panel-body col-lg-12").appendTo("#comments");
+                    
+                      //add module, Private and comment to container
+                      $("<label>").text($("#leaveComment").find("input").val()).appendTo(div);
+                      
+                      $("<div>").text($("#leaveComment").find("textarea").val()).appendTo("panel-body col-lg-12");
+
+                      $("<label>").find(":checkbox").val().appendTo(div);
+                      
+                      //empty inputs
+                      $("#leaveComment").find("input").val("");
+                      $("#leaveComment").find(".form-controltextarea").val("");
+                    }
+                  };
+                  
+                  $.ajax(ajaxOpts);
+                
+                });   
+              });            
+            </script>   
 
 
  

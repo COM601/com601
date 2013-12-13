@@ -21,15 +21,13 @@
 	 */
 	 
 	 
-	$aColumns = array( 'user_id', 'module','assignment_name', 'assignment_brief', 'feedback_url' );
+	$aColumns = array( 'user_id', 'comment_body', 'module_ass' );
 	
 	/* Indexed column (used for fast and accurate table cardinality) */
 	$sIndexColumn = "user_id";
 	
 	/* DB table to use */
-	$sTable = "user_assignment";
-
-	
+	$sTable = "comment";
 	
 	/* Database connection information */
 	$gaSql['user']       = "root";
@@ -134,7 +132,7 @@
 		FROM   $sTable
 		$sWhere
 		$sOrder
-		$sLimit WHERE user_id='$myusername' and module='COM 602' and assignment_id='1'
+		$sLimit WHERE private='Yes'
 	";
 	$rResult = mysql_query( $sQuery, $gaSql['link'] ) or die(mysql_error());
 	

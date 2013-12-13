@@ -9,7 +9,7 @@ $myusername = $_SESSION['login_user'];
 include("../includes/config.php");
 
 //query the database  
-  $query = mysql_query("SELECT * FROM comment WHERE user_id='$myusername'");  
+  $query = mysql_query("SELECT * FROM comment");  
       
     //loop through and return results  
   for ($x = 0, $numrows = mysql_num_rows($query); $x < $numrows; $x++) {  
@@ -17,8 +17,7 @@ include("../includes/config.php");
       
     $comments[$x] = array(
     	"comment_body" => $row["comment_body"],
-    	"module_ass" => $row["module_ass"],
-      "private" => $row["private"]
+    	"module_ass" => $row["module_ass"]
     	);        
   }  
       
@@ -26,5 +25,4 @@ include("../includes/config.php");
   $response = $_GET["jsoncallback"] . "(" . json_encode($comments) . ")";  
   echo $response;    
   
-?>  
-
+?>
